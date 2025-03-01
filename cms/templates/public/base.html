@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Edmund Arvin De Leon - Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <a href="/" class="logo-link"><div class="logo">EADL</div></a>
+        <nav>
+            <ul>
+                <li><a href="/" {% if request.path == '/' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="/articles" {% if '/articles' in request.path %}class="active"{% endif %}>Articles</a></li>
+                <li><a href="/notebooks" {% if '/notebooks' in request.path %}class="active"{% endif %}>Notebooks</a></li>
+                <li><a href="/projects" {% if '/projects' in request.path %}class="active"{% endif %}>Projects</a></li>
+                <li><a href="/about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="{% block main_class %}{% endblock %}">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; {{ current_year }} Edmund Arvin De Leon. All rights reserved.
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/edmundarvin1" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/edmundarvin" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://kaggle.com/edmundarvin" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
