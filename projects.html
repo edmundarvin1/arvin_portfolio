@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Edmund Arvin De Leon</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">EADL</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="projects-page">
+        <h1>Projects & Articles</h1>
+        
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-filter="app">Applications</button>
+            <button class="filter-btn" data-filter="article">Articles</button>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card" data-category="ml">
+                <div class="project-image">
+                    <img src="images/project1.svg" alt="Machine Learning Project">
+                </div>
+                <div class="project-info">
+                    <h3>Image Classification Model</h3>
+                    <p>A deep learning model for image classification using TensorFlow.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>CNN</span>
+                    </div>
+                    <a href="#" class="btn primary">View Project</a>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card" data-category="app">
+                <div class="project-image">
+                    <img src="images/project2.svg" alt="Web Application">
+                </div>
+                <div class="project-info">
+                    <h3>Predictive Analytics Dashboard</h3>
+                    <p>Interactive dashboard for data visualization and predictive analytics.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Pandas</span>
+                    </div>
+                    <a href="#" class="btn primary">View Project</a>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card" data-category="article">
+                <div class="project-image">
+                    <img src="images/project3.svg" alt="Technical Article">
+                </div>
+                <div class="project-info">
+                    <h3>Understanding Transformer Models</h3>
+                    <p>A comprehensive guide to transformer architecture in NLP.</p>
+                    <div class="project-tags">
+                        <span>NLP</span>
+                        <span>Transformers</span>
+                        <span>BERT</span>
+                    </div>
+                    <a href="#" class="btn primary">Read Article</a>
+                </div>
+            </div>
+            
+            <!-- Add more project cards as needed -->
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
