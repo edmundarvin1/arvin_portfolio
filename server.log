@@ -1,0 +1,24 @@
+Serving at http://localhost:52530
+127.0.0.1 - - [01/Mar/2025 14:21:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:36] "GET /styles/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:36] "GET /js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:40] "GET /projects.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:40] "GET /styles/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:40] "GET /images/project1.svg HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:40] "GET /images/project2.svg HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:40] "GET /images/project3.svg HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:40] "GET /js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:44] "GET /about.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:44] "GET /styles/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:44] "GET /images/profile.svg HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:44] "GET /js/main.js HTTP/1.1" 200 -
+172.17.0.1 - - [01/Mar/2025 14:21:46] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [01/Mar/2025 14:21:46] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [01/Mar/2025 14:21:46] "GET /js/main.js HTTP/1.1" 200 -
+172.17.0.1 - - [01/Mar/2025 14:21:46] "GET /styles/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:48] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:48] "GET /styles/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2025 14:21:48] "GET /js/main.js HTTP/1.1" 200 -
+172.17.0.1 - - [01/Mar/2025 14:21:49] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [01/Mar/2025 14:21:52] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [01/Mar/2025 14:21:55] "GET / HTTP/1.1" 200 -
