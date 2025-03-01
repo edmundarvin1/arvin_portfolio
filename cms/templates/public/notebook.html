@@ -1,0 +1,117 @@
+{% extends "public/base.html" %}
+
+{% block title %}{{ notebook.title }} - Edmund Arvin De Leon{% endblock %}
+
+{% block extra_css %}
+<style>
+    .notebook-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .notebook-header {
+        margin-bottom: 2rem;
+    }
+    
+    .notebook-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .notebook-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        color: var(--light-text);
+    }
+    
+    .notebook-date {
+        margin-right: 1.5rem;
+    }
+    
+    .notebook-tags span {
+        display: inline-block;
+        background-color: rgba(108, 92, 231, 0.1);
+        color: var(--primary-color);
+        padding: 0.3rem 0.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .notebook-description {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .notebook-content {
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 1rem;
+        background-color: white;
+    }
+    
+    .notebook-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
+    }
+    
+    /* Override Jupyter notebook styles */
+    .notebook-content .jp-Notebook {
+        padding: 0;
+    }
+    
+    .notebook-content .jp-Cell {
+        margin-bottom: 1rem;
+    }
+    
+    .notebook-content .jp-InputArea {
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        padding: 0.5rem;
+    }
+    
+    .notebook-content .jp-OutputArea {
+        padding: 0.5rem;
+    }
+    
+    .notebook-content img {
+        max-width: 100%;
+    }
+</style>
+{% endblock %}
+
+{% block main_class %}notebook-page{% endblock %}
+
+{% block content %}
+<div class="notebook-container">
+    <div class="notebook-header">
+        <h1 class="notebook-title">{{ notebook.title }}</h1>
+        <div class="notebook-meta">
+            <div class="notebook-date">{{ notebook.date }}</div>
+            <div class="notebook-tags">
+                {% for tag in notebook.tags %}
+                <span>{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="notebook-description">
+            {{ notebook.description }}
+        </div>
+    </div>
+    
+    <div class="notebook-content">
+        {{ html_content|safe }}
+    </div>
+    
+    <div class="notebook-navigation">
+        <a href="{{ url_for('notebooks') }}" class="btn secondary">Back to Notebooks</a>
+    </div>
+</div>
+{% endblock %}

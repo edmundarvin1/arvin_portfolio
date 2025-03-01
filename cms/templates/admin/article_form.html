@@ -1,0 +1,65 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if article %}Edit Article{% else %}New Article{% endif %} - Portfolio CMS{% endblock %}
+
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h4 class="mb-0">{% if article %}Edit Article{% else %}New Article{% endif %}</h4>
+    </div>
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ article.title if article else '' }}" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="content" class="form-label">Content (Markdown)</label>
+                <textarea class="form-control" id="content" name="content" rows="10" required>{{ article.content if article else '' }}</textarea>
+            </div>
+            
+            <div class="mb-3">
+                <label for="tags" class="form-label">Tags (comma separated)</label>
+                <input type="text" class="form-control" id="tags" name="tags" value="{{ article.tags|join(',') if article and article.tags else '' }}">
+            </div>
+            
+            <div class="mb-3">
+                <label for="image" class="form-label">Featured Image</label>
+                {% if article and article.image %}
+                <div class="mb-2">
+                    <img src="{{ url_for('uploaded_file', filename=article.image) }}" alt="{{ article.title }}" style="max-width: 200px; max-height: 200px;">
+                </div>
+                {% endif %}
+                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                <div class="form-text">Leave empty to keep the current image.</div>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+                <a href="{{ url_for('admin') }}" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const easyMDE = new EasyMDE({
+            element: document.getElementById('content'),
+            spellChecker: false,
+            autosave: {
+                enabled: true,
+                uniqueId: 'article-content'
+            }
+        });
+    });
+</script>
+{% endblock %}
