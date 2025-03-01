@@ -3,6 +3,7 @@ import json
 import markdown
 import shutil
 from datetime import datetime
+from datetime import date
 from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -150,30 +151,36 @@ def index():
     articles = get_articles()[:5]  # Get latest 5 articles
     notebooks = get_notebooks()[:5]  # Get latest 5 notebooks
     projects = get_projects()[:5]  # Get latest 5 projects
+    current_year = date.today().year
     return render_template('public/index.html', 
                           articles=articles, 
                           notebooks=notebooks, 
-                          projects=projects)
+                          projects=projects,
+                          current_year=current_year)
 
 @app.route('/articles')
 def articles():
     articles = get_articles()
-    return render_template('public/articles.html', articles=articles)
+    current_year = date.today().year
+    return render_template('public/articles.html', articles=articles, current_year=current_year)
 
 @app.route('/article/<slug>')
 def article(slug):
+    current_year = date.today().year
     for article in get_articles():
         if article['slug'] == slug:
-            return render_template('public/article.html', article=article)
+            return render_template('public/article.html', article=article, current_year=current_year)
     return redirect(url_for('articles'))
 
 @app.route('/notebooks')
 def notebooks():
     notebooks = get_notebooks()
-    return render_template('public/notebooks.html', notebooks=notebooks)
+    current_year = date.today().year
+    return render_template('public/notebooks.html', notebooks=notebooks, current_year=current_year)
 
 @app.route('/notebook/<slug>')
 def notebook(slug):
+    current_year = date.today().year
     for notebook in get_notebooks():
         if notebook['slug'] == slug:
             html_path = os.path.join(app.config['NOTEBOOKS_DIR'], notebook['html_file'])
@@ -181,19 +188,22 @@ def notebook(slug):
                 html_content = f.read()
             return render_template('public/notebook.html', 
                                   notebook=notebook, 
-                                  html_content=html_content)
+                                  html_content=html_content,
+                                  current_year=current_year)
     return redirect(url_for('notebooks'))
 
 @app.route('/projects')
 def projects():
     projects = get_projects()
-    return render_template('public/projects.html', projects=projects)
+    current_year = date.today().year
+    return render_template('public/projects.html', projects=projects, current_year=current_year)
 
 @app.route('/project/<slug>')
 def project(slug):
+    current_year = date.today().year
     for project in get_projects():
         if project['slug'] == slug:
-            return render_template('public/project.html', project=project)
+            return render_template('public/project.html', project=project, current_year=current_year)
     return redirect(url_for('projects'))
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -383,4 +393,4 @@ def delete_article(id):
     return redirect(url_for('admin'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8081, debug=True)
+    app.run(host='0.0.0.0', port=57658, debug=True)
