@@ -2,7 +2,7 @@ import http.server
 import socketserver
 import os
 
-PORT = 52530
+PORT = 8080  # Standard alternative HTTP port
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 class CORSHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -21,5 +21,5 @@ handler = CORSHTTPRequestHandler
 handler.directory = DIRECTORY
 
 with socketserver.TCPServer(("0.0.0.0", PORT), handler) as httpd:
-    print(f"Serving at http://localhost:{PORT}")
+    print(f"Serving at http://0.0.0.0:{PORT}")
     httpd.serve_forever()

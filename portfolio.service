@@ -1,0 +1,12 @@
+[Unit]
+Description=Portfolio Website Python Server
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/var/www/portfolio
+ExecStart=/var/www/portfolio/venv/bin/python /var/www/portfolio/server.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
