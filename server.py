@@ -2,7 +2,7 @@ import http.server
 import socketserver
 import os
 
-PORT = 8082
+PORT = 8080
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 class CORSHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
