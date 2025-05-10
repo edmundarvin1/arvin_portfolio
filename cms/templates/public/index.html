@@ -1,0 +1,110 @@
+{% extends "public/base.html" %}
+
+{% block main_class %}content-page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="latest-content">
+        <h1>Latest Articles</h1>
+        <div class="content-grid">
+            {% for article in articles %}
+            <div class="content-card">
+                <div class="content-image">
+                    {% if article.image %}
+                    <img src="{{ url_for('uploaded_file', filename=article.image) }}" alt="{{ article.title }}">
+                    {% else %}
+                    <div class="placeholder-image">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="content-info">
+                    <h3>{{ article.title }}</h3>
+                    <p class="content-date">{{ article.date }}</p>
+                    <div class="content-tags">
+                        {% for tag in article.tags %}
+                        <span>{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ url_for('article', slug=article.slug) }}" class="btn primary">Read Article</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if articles %}
+        <div class="view-all">
+            <a href="{{ url_for('articles') }}" class="btn secondary">View All Articles</a>
+        </div>
+        {% endif %}
+    </section>
+
+    <section class="latest-content">
+        <h1>Jupyter Notebooks</h1>
+        <div class="content-grid">
+            {% for notebook in notebooks %}
+            <div class="content-card">
+                <div class="content-image">
+                    <div class="placeholder-image">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                </div>
+                <div class="content-info">
+                    <h3>{{ notebook.title }}</h3>
+                    <p class="content-date">{{ notebook.date }}</p>
+                    <p>{{ notebook.description }}</p>
+                    <div class="content-tags">
+                        {% for tag in notebook.tags %}
+                        <span>{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ url_for('notebook', slug=notebook.slug) }}" class="btn primary">View Notebook</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if notebooks %}
+        <div class="view-all">
+            <a href="{{ url_for('notebooks') }}" class="btn secondary">View All Notebooks</a>
+        </div>
+        {% endif %}
+    </section>
+
+    <section class="latest-content">
+        <h1>Projects</h1>
+        <div class="content-grid">
+            {% for project in projects %}
+            <div class="content-card">
+                <div class="content-image">
+                    {% if project.image %}
+                    <img src="{{ url_for('uploaded_file', filename=project.image) }}" alt="{{ project.title }}">
+                    {% else %}
+                    <div class="placeholder-image">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="content-info">
+                    <h3>{{ project.title }}</h3>
+                    <p class="content-date">{{ project.date }}</p>
+                    <p>{{ project.description }}</p>
+                    <div class="content-tags">
+                        {% for tag in project.tags %}
+                        <span>{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="button-group">
+                        <a href="{{ url_for('project', slug=project.slug) }}" class="btn primary">Details</a>
+                        <a href="{{ project.url }}" class="btn secondary" target="_blank">Visit Project</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if projects %}
+        <div class="view-all">
+            <a href="{{ url_for('projects') }}" class="btn secondary">View All Projects</a>
+        </div>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "public/base.html" %}
+
+{% block title %}Projects - Edmund Arvin De Leon{% endblock %}
+
+{% block main_class %}content-page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Projects</h1>
+    
+    <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        {% set all_tags = [] %}
+        {% for project in projects %}
+            {% for tag in project.tags %}
+                {% if tag not in all_tags %}
+                    {% set _ = all_tags.append(tag) %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        
+        {% for tag in all_tags %}
+        <button class="filter-btn" data-filter="{{ tag }}">{{ tag }}</button>
+        {% endfor %}
+    </div>
+    
+    <div class="content-grid">
+        {% for project in projects %}
+        <div class="content-card" data-tags="{{ project.tags|join(' ') }}">
+            <div class="content-image">
+                {% if project.image %}
+                <img src="{{ url_for('uploaded_file', filename=project.image) }}" alt="{{ project.title }}">
+                {% else %}
+                <div class="placeholder-image">
+                    <i class="fas fa-code"></i>
+                </div>
+                {% endif %}
+            </div>
+            <div class="content-info">
+                <h3>{{ project.title }}</h3>
+                <p class="content-date">{{ project.date }}</p>
+                <p>{{ project.description }}</p>
+                <div class="content-tags">
+                    {% for tag in project.tags %}
+                    <span>{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                <div class="button-group">
+                    <a href="{{ url_for('project', slug=project.slug) }}" class="btn primary">Details</a>
+                    <a href="{{ project.url }}" class="btn secondary" target="_blank">Visit Project</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const contentCards = document.querySelectorAll('.content-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Get filter value
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Filter content cards
+                contentCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const tags = card.getAttribute('data-tags');
+                        if (tags.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    });
+</script>
+{% endblock %}

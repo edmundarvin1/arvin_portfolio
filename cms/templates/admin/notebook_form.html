@@ -1,0 +1,40 @@
+{% extends "admin/base.html" %}
+
+{% block title %}New Notebook - Portfolio CMS{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h4 class="mb-0">New Notebook</h4>
+    </div>
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            
+            <div class="mb-3">
+                <label for="html_file" class="form-label">HTML File (exported from Jupyter)</label>
+                <input type="file" class="form-control" id="html_file" name="html_file" accept=".html" required>
+                <div class="form-text">Upload the HTML file exported from your Jupyter notebook.</div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="tags" class="form-label">Tags (comma separated)</label>
+                <input type="text" class="form-control" id="tags" name="tags">
+            </div>
+            
+            <div class="d-flex justify-content-between">
+                <a href="{{ url_for('admin') }}" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
