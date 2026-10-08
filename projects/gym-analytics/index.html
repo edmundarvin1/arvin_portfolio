@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Analytics - Arvin De Leon</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="logo-link"><div class="logo">Arvin De Leon</div></a>
+        <nav>
+            <ul>
+                <li><a href="../../projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-page">
+        <div class="dashboard-container">
+            <h1>Gym Analytics</h1>
+            <p>Deep dive into training progress and performance metrics</p>
+
+            <div id="loading">Loading data...</div>
+            <div id="error" style="display: none; color: red;"></div>
+
+            <!-- Dashboard content will be inserted here by JavaScript -->
+            <div id="dashboard-content" style="display: none;">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Total Workouts</h3>
+                        <p id="total-workouts">0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Total Volume (kg)</h3>
+                        <p id="total-volume">0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Current Streak</h3>
+                        <p id="current-streak">0 days</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>PR's This Month</h3>
+                        <p id="prs-month">0</p>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h2>Volume Over Time</h2>
+                    <canvas id="volume-chart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h2>Exercise Progress</h2>
+                    <canvas id="exercise-chart"></canvas>
+                </div>
+
+                <div class="prs-section">
+                    <h2>Personal Records</h2>
+                    <div id="prs-list"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

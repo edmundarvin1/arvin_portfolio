@@ -1,0 +1,104 @@
+/* Trading Dashboard Styles */
+
+.dashboard-page {
+    padding: 3rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dashboard-container {
+    width: 100%;
+}
+
+.dashboard-container h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-container > p {
+    color: var(--light-text, #666);
+    margin-bottom: 3rem;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.metric-card {
+    border: 1px solid var(--border-color, #e5e5e5);
+    padding: 1.5rem;
+}
+
+.metric-card h3 {
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-card p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Chart Container */
+.chart-container {
+    margin-bottom: 3rem;
+}
+
+.chart-container h2 {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+#pnl-chart {
+    max-height: 400px;
+}
+
+/* Trades Table */
+.trades-table {
+    margin-bottom: 3rem;
+}
+
+.trades-table h2 {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+#trades-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#trades-list th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color, #e5e5e5);
+}
+
+#trades-list td {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color, #e5e5e5);
+}
+
+#trades-list tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Loading and Error States */
+#loading,
+#error {
+    padding: 3rem 0;
+    text-align: center;
+}
