@@ -1,8 +1,8 @@
-/* Gym Analytics Dashboard Styles */
+/* Gym Analytics Dashboard Styles - Ultra Minimalist */
 
 .dashboard-page {
     padding: 3rem 0;
-    max-width: 900px;
+    max-width: 672px;
     margin: 0 auto;
 }
 
@@ -19,49 +19,58 @@
 .dashboard-container > p {
     color: var(--light-text, #666);
     margin-bottom: 3rem;
+    line-height: 1.7;
 }
 
 /* Metrics Grid */
 .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
 .metric-card {
-    border: 1px solid var(--border-color, #e5e5e5);
-    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color, #e5e5e5);
+    padding-bottom: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.metric-card:hover {
+    border-bottom-color: var(--text-color);
 }
 
 .metric-card h3 {
     font-size: 0.875rem;
     font-weight: 400;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+    color: var(--light-text);
+    letter-spacing: 0.025em;
 }
 
 .metric-card p {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.75rem;
+    font-weight: 400;
     margin: 0;
+    color: var(--text-color);
+    line-height: 1.2;
 }
 
 /* Chart Container */
 .chart-container {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .chart-container h2 {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
 }
 
 #volume-chart,
 #exercise-chart {
-    max-height: 400px;
+    max-height: 360px;
 }
 
 /* PRs Section */
@@ -70,15 +79,16 @@
 }
 
 .prs-section h2 {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
 }
 
 #prs-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
 }
 
 .pr-item {
@@ -87,44 +97,64 @@
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color, #e5e5e5);
+    transition: color 0.15s ease;
 }
 
 .pr-item:last-child {
     border-bottom: none;
 }
 
+.pr-item:hover {
+    color: var(--light-text);
+}
+
 .pr-exercise {
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    color: inherit;
 }
 
 .pr-details {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
 }
 
 .pr-weight {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: inherit;
 }
 
 .pr-date {
     font-size: 0.875rem;
-    color: var(--light-text, #666);
+    color: var(--light-text);
 }
 
 /* Loading and Error States */
-#loading,
-#error {
-    padding: 3rem 0;
+#loading {
+    padding: 4rem 0;
     text-align: center;
+    color: var(--light-text);
+    font-size: 0.9375rem;
+}
+
+#error {
+    padding: 4rem 0;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 0.9375rem;
 }
 
 /* Responsive */
 @media (max-width: 576px) {
     .metrics-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .metric-card p {
+        font-size: 1.5rem;
     }
 
     .pr-item {
@@ -134,6 +164,11 @@
     }
 
     .pr-details {
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+
+    .pr-exercise,
+    .pr-weight {
+        font-size: 0.875rem;
     }
 }

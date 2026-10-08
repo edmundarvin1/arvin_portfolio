@@ -42,9 +42,9 @@ function createVolumeChart(data) {
             datasets: [{
                 label: 'Volume (kg)',
                 data: data.volumes,
-                backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                borderColor: '#000',
-                borderWidth: 1
+                backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                borderColor: 'transparent',
+                borderWidth: 0
             }]
         },
         options: {
@@ -53,18 +53,40 @@ function createVolumeChart(data) {
             plugins: {
                 legend: {
                     display: false
+                },
+                tooltip: {
+                    backgroundColor: '#000',
+                    titleColor: '#fff',
+                    bodyColor: '#fff',
+                    padding: 12,
+                    displayColors: false,
+                    cornerRadius: 4
                 }
             },
             scales: {
                 y: {
                     beginAtZero: true,
                     grid: {
-                        color: '#e5e5e5'
+                        color: '#e5e5e5',
+                        borderColor: '#e5e5e5'
+                    },
+                    ticks: {
+                        color: '#666',
+                        font: {
+                            size: 12
+                        }
                     }
                 },
                 x: {
                     grid: {
-                        display: false
+                        display: false,
+                        borderColor: '#e5e5e5'
+                    },
+                    ticks: {
+                        color: '#666',
+                        font: {
+                            size: 12
+                        }
                     }
                 }
             }
@@ -80,6 +102,9 @@ function createExerciseChart(data) {
         exerciseChart.destroy();
     }
 
+    // Generate grayscale colors for different exercises
+    const grayScales = ['#000', '#333', '#666', '#999'];
+
     exerciseChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -87,10 +112,15 @@ function createExerciseChart(data) {
             datasets: data.exercises.map((exercise, index) => ({
                 label: exercise.name,
                 data: exercise.weights,
-                borderColor: `hsl(${index * 60}, 50%, 40%)`,
-                backgroundColor: `hsla(${index * 60}, 50%, 40%, 0.1)`,
-                borderWidth: 2,
-                tension: 0.1
+                borderColor: grayScales[index % grayScales.length],
+                backgroundColor: `rgba(0, 0, 0, ${0.05 + (index * 0.03)})`,
+                borderWidth: 1.5,
+                tension: 0.1,
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointHoverBackgroundColor: grayScales[index % grayScales.length],
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 2
             }))
         },
         options: {
@@ -101,20 +131,46 @@ function createExerciseChart(data) {
                     position: 'bottom',
                     labels: {
                         boxWidth: 12,
-                        padding: 15
+                        padding: 15,
+                        color: '#000',
+                        font: {
+                            size: 12,
+                            weight: 400
+                        }
                     }
+                },
+                tooltip: {
+                    backgroundColor: '#000',
+                    titleColor: '#fff',
+                    bodyColor: '#fff',
+                    padding: 12,
+                    cornerRadius: 4
                 }
             },
             scales: {
                 y: {
                     beginAtZero: true,
                     grid: {
-                        color: '#e5e5e5'
+                        color: '#e5e5e5',
+                        borderColor: '#e5e5e5'
+                    },
+                    ticks: {
+                        color: '#666',
+                        font: {
+                            size: 12
+                        }
                     }
                 },
                 x: {
                     grid: {
-                        display: false
+                        display: false,
+                        borderColor: '#e5e5e5'
+                    },
+                    ticks: {
+                        color: '#666',
+                        font: {
+                            size: 12
+                        }
                     }
                 }
             }

@@ -42,9 +42,14 @@ function createPnLChart(data) {
                 label: 'Cumulative P&L',
                 data: data.cumulativePnL,
                 borderColor: '#000',
-                backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                borderWidth: 2,
-                tension: 0.1
+                backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                borderWidth: 1.5,
+                tension: 0.1,
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointHoverBackgroundColor: '#000',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 2
             }]
         },
         options: {
@@ -53,18 +58,40 @@ function createPnLChart(data) {
             plugins: {
                 legend: {
                     display: false
+                },
+                tooltip: {
+                    backgroundColor: '#000',
+                    titleColor: '#fff',
+                    bodyColor: '#fff',
+                    padding: 12,
+                    displayColors: false,
+                    cornerRadius: 4
                 }
             },
             scales: {
                 y: {
                     beginAtZero: true,
                     grid: {
-                        color: '#e5e5e5'
+                        color: '#e5e5e5',
+                        borderColor: '#e5e5e5'
+                    },
+                    ticks: {
+                        color: '#666',
+                        font: {
+                            size: 12
+                        }
                     }
                 },
                 x: {
                     grid: {
-                        display: false
+                        display: false,
+                        borderColor: '#e5e5e5'
+                    },
+                    ticks: {
+                        color: '#666',
+                        font: {
+                            size: 12
+                        }
                     }
                 }
             }
@@ -79,11 +106,12 @@ function updateTradesTable(trades) {
 
     trades.forEach(trade => {
         const row = tbody.insertRow();
+        const pnlColor = trade.pnl >= 0 ? '#000' : '#666';
         row.innerHTML = `
             <td>${new Date(trade.date).toLocaleDateString()}</td>
             <td>${trade.pair}</td>
             <td>${trade.type}</td>
-            <td style="color: ${trade.pnl >= 0 ? 'green' : 'red'}">$${trade.pnl.toFixed(2)}</td>
+            <td style="color: ${pnlColor}">${trade.pnl >= 0 ? '+' : ''}$${trade.pnl.toFixed(2)}</td>
         `;
     });
 }
