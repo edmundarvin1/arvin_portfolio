@@ -176,9 +176,6 @@ nav ul li a.active::after {
     align-items: center;
     justify-content: center;
     position: relative;
-    background:
-        radial-gradient(ellipse at top, rgba(212, 165, 116, 0.1) 0%, transparent 60%),
-        linear-gradient(180deg, var(--midnight) 0%, var(--deep-ocean) 100%);
     padding-top: 80px;
 }
 
