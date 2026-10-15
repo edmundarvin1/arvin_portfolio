@@ -3,89 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Edmund Arvin De Leon</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Work - Arvin De Leon</title>
+    <link rel="stylesheet" href="styles/main.css?v=5">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo-link"><div class="logo">EADL</div></a>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="about.html">About Me</a></li>
+                <li><a href="about.html">— About</a></li>
+                <li><a href="projects.html" class="active">— Work</a></li>
+                <li><a href="mailto:edmundarvin1@gmail.com">— Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="projects-page">
-        <h1>Projects & Articles</h1>
-        
-        <div class="filter-tabs">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="ml">Machine Learning</button>
-            <button class="filter-btn" data-filter="app">Applications</button>
-            <button class="filter-btn" data-filter="article">Articles</button>
-        </div>
-        
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card" data-category="ml">
-                <div class="project-image">
-                    <img src="images/project1.svg" alt="Machine Learning Case">
-                </div>
-                <div class="project-info">
-                    <h3>Churn Prediction</h3>
-                    <p>Predicting churn for online gamblers</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Random Forest</span>
-                        <span>churn prediction</span>
-                    </div>
-                    <a href="churn_prediction.html" class="btn primary">View Project</a>
-                </div>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Selected Work</h1>
+                <p class="subtitle">Projects in machine learning, data engineering, and analytics</p>
             </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card" data-category="app">
-                <div class="project-image">
-                    <img src="images/project2.svg" alt="Web Application">
-                </div>
-                <div class="project-info">
-                    <h3>Predictive Analytics Dashboard</h3>
-                    <p>Interactive dashboard for data visualization and predictive analytics.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Streamlit</span>
-                        <span>Pandas</span>
-                    </div>
-                    <a href="#" class="btn primary">View Project</a>
-                </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <article class="project-card">
+                    <div class="project-number">01</div>
+                    <h2><a href="churn_prediction.html">Churn Prediction</a></h2>
+                    <p class="project-description">Predicting churn for online gamblers using Random Forest models. Built a classification system to identify at-risk users and improve retention strategies.</p>
+                    <p class="project-meta">Python · Random Forest · Classification</p>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">02</div>
+                    <h2><a href="#">Predictive Analytics Dashboard</a></h2>
+                    <p class="project-description">Interactive dashboard for data visualization and predictive analytics. Streamlined model insights for business stakeholders.</p>
+                    <p class="project-meta">Python · Streamlit · Pandas</p>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">03</div>
+                    <h2><a href="#">Understanding Transformer Models</a></h2>
+                    <p class="project-description">A comprehensive guide to transformer architecture in NLP. Breaking down attention mechanisms and modern language models.</p>
+                    <p class="project-meta">NLP · Transformers · BERT</p>
+                </article>
             </div>
-            
-            <!-- Project 3 -->
-            <div class="project-card" data-category="article">
-                <div class="project-image">
-                    <img src="images/project3.svg" alt="Technical Article">
-                </div>
-                <div class="project-info">
-                    <h3>Understanding Transformer Models</h3>
-                    <p>A comprehensive guide to transformer architecture in NLP.</p>
-                    <div class="project-tags">
-                        <span>NLP</span>
-                        <span>Transformers</span>
-                        <span>BERT</span>
-                    </div>
-                    <a href="#" class="btn primary">Read Article</a>
-                </div>
-            </div>
-            
-            <!-- Add more project cards as needed -->
-        </div>
+        </section>
     </main>
 
     <script src="js/main.js"></script>

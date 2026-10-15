@@ -3,46 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edmund Arvin De Leon - Data Scientist</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Arvin De Leon</title>
+    <link rel="stylesheet" href="styles/main.css?v=6">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo">EADL</div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About Me</a></li>
+                <li><a href="#about">— About</a></li>
+                <li><a href="#work">— Work</a></li>
+                <li><a href="#contact">— Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="landing">
-        <div class="hero">
-            <h1>EDMUND ARVIN DE LEON</h1>
-            <h2>Data Scientist</h2>
-            <div class="social-links">
-                <a href="https://github.com/edmundarvin1" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/edmundarvin1/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://www.kaggle.com/edmundarvin1" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-kaggle"></i>
-                </a>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <p class="location">Stockholm, Sweden — Analytics Engineer at Yazen</p>
+            <h1>Hello, I am Arvin.<br>I navigate the dark waters <span class="accent">between signal and noise.</span></h1>
+            <p class="description">Building data systems that hold steady when the storm hits. Pipelines forged in production fires, metrics that guide through uncertainty, dashboards that illuminate the path forward.</p>
+            <a href="#work" class="cta-button">View my work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>About</h2>
             </div>
-            <div class="cta-buttons">
-                <a href="projects.html" class="btn primary">View Projects</a>
-                <a href="about.html" class="btn secondary">About Me</a>
+            <div class="about-content">
+                <p class="large-text">I'm a data scientist specializing in machine learning, data engineering, and AI-driven automation.</p>
+                <p>As BrightBid's (NASDAQ: BRIGHT) first data scientist, I built and deployed machine learning models powering key AdTech products—optimizing bids, detecting anomalies, and automating keyword management.</p>
+                <p>Before transitioning to tech, I worked as a bank trader where I developed and backtested quantitative trading strategies while managing a proprietary trading fund.</p>
+                <p>My expertise spans model development, large language models, and statistical analysis. I thrive in fast-paced environments where technology meets business impact.</p>
+            </div>
+
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h3>Software</h3>
+                    <p>Python, SQL, Scikit-learn, PyTorch, OpenAI API, Pandas, NumPy, Django, Flask, Docker, GitHub Actions, PostgreSQL, Databricks, AWS, Azure</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Machine Learning</h3>
+                    <p>Regression, Classification, Time Series Analysis, Clustering, Model Deployment, LLMs, RAG, LLM Agents</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Data & Analytics</h3>
+                    <p>Business Intelligence, Forecasting, Data Wrangling, ETL Pipelines, Hypothesis Testing, Experimental Design, A/B Testing</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Domain</h3>
+                    <p>AdTech, Google Ads Optimization, Campaign Analysis, Quantitative Trading</p>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2>Selected Work</h2>
+            </div>
+
+            <div class="projects-list">
+                <article class="project-card">
+                    <div class="project-number">01</div>
+                    <h3><a href="churn_prediction.html">Churn Prediction</a></h3>
+                    <p class="project-description">Predicting churn for online gamblers using Random Forest models. Built a classification system to identify at-risk users and improve retention strategies.</p>
+                    <p class="project-meta">Python · Random Forest · Classification</p>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">02</div>
+                    <h3><a href="#">Predictive Analytics Dashboard</a></h3>
+                    <p class="project-description">Interactive dashboard for data visualization and predictive analytics. Streamlined model insights for business stakeholders.</p>
+                    <p class="project-meta">Python · Streamlit · Pandas</p>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">03</div>
+                    <h3><a href="#">Understanding Transformer Models</a></h3>
+                    <p class="project-description">A comprehensive guide to transformer architecture in NLP. Breaking down attention mechanisms and modern language models.</p>
+                    <p class="project-meta">NLP · Transformers · BERT</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>Get In Touch</h2>
+            </div>
+            <p class="contact-intro">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+
+            <div class="contact-links">
+                <a href="mailto:edmundarvin1@gmail.com" class="contact-link primary">
+                    <span class="link-label">Email</span>
+                    <span class="link-value">edmundarvin1@gmail.com</span>
+                </a>
+                <a href="https://github.com/edmundarvin1" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="link-label">GitHub</span>
+                    <span class="link-value">@edmundarvin1</span>
+                </a>
+                <a href="https://www.linkedin.com/in/edmundarvin1/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="link-label">LinkedIn</span>
+                    <span class="link-value">/in/edmundarvin1</span>
+                </a>
+                <a href="https://www.kaggle.com/edmundarvin1" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="link-label">Kaggle</span>
+                    <span class="link-value">@edmundarvin1</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Arvin De Leon. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>

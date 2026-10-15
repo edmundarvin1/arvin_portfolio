@@ -1,0 +1,12 @@
+# Backend API Dependencies
+
+Flask==3.0.0
+flask-cors==4.0.0
+python-dotenv==1.0.0
+
+# Uncomment when needed:
+# requests==2.31.0  # For trading API calls
+# google-auth==2.23.0  # For Google Sheets authentication
+# google-auth-oauthlib==1.1.0
+# google-auth-httplib2==0.1.1
+# google-api-python-client==2.100.0  # For Google Sheets API

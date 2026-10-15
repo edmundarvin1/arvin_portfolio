@@ -3,125 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Edmund Arvin De Leon</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>About - Arvin De Leon</title>
+    <link rel="stylesheet" href="styles/main.css?v=5">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo-link"><div class="logo">EADL</div></a>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="about.html" class="active">— About</a></li>
+                <li><a href="projects.html">— Work</a></li>
+                <li><a href="mailto:edmundarvin1@gmail.com">— Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="about-page">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="images/arvin_selfie.jpeg" alt="Edmund Arvin De Leon">
-            </div>
-            <div class="about-content">
+    <main>
+        <section class="page-hero">
+            <div class="container">
                 <h1>About Me</h1>
-                <p>Hello!</p>
-                
-                <p>
-                    I’m a data scientist specializing in <strong>machine learning</strong>, <strong>data engineering</strong>, and <strong>AI-driven automation</strong>. 
-                    As BrightBid’s (NASDAQ: BRIGHT) first data scientist, I built and deployed machine learning models powering key <strong>AdTech</strong> products—
-                    optimizing bids, detecting anomalies, and automating keyword management. Before transitioning to tech, I worked as a bank trader where I developed and backtested <strong>quantitative trading strategies</strong>  while managing a proprietary trading fund.
-                </p>
-                <p>
-                    My expertise spans <strong>model development</strong>, <strong>large language models (LLMs)</strong>, and <strong>statistical analysis</strong>. 
-                    Passionate about building intelligent systems, I thrive in fast-paced environments where <strong>technology meets business impact</strong>.
-                </p>
-                
-                <h2>Skills</h2>
-                <div class="skills-container">
-                    
-                    <div class="skill-category">
-                        <h3>Software Proficiency</h3>
-                        <ul>
-                            <li><strong>Languages:</strong> Python, SQL</li>
-                            <li><strong>Frameworks & Libraries:</strong> Scikit-learn, Pytorch, OpenAI API, Pandas, NumPy, NinjaAPI, Django, Flask</li>
-                            <li><strong>Data Engineering:</strong> Docker, GitHub Actions</li>
-                            <li><strong>Databases:</strong> PostgreSQL, Chroma</li>
-                            <li><strong>Other Technologies:</strong> Databricks, Metabase, Streamlit, Jupyter, AWS, Azure</li>
-                        </ul>
+                <p class="subtitle">Data scientist, engineer, and problem solver</p>
+            </div>
+        </section>
+
+        <section class="about-intro">
+            <div class="container">
+                <p class="large-text">I'm a data scientist specializing in machine learning, data engineering, and AI-driven automation.</p>
+                <p>As BrightBid's (NASDAQ: BRIGHT) first data scientist, I built and deployed machine learning models powering key AdTech products—optimizing bids, detecting anomalies, and automating keyword management.</p>
+                <p>Before transitioning to tech, I worked as a bank trader where I developed and backtested quantitative trading strategies while managing a proprietary trading fund.</p>
+                <p>My expertise spans model development, large language models, and statistical analysis. I thrive in fast-paced environments where technology meets business impact.</p>
+            </div>
+        </section>
+
+        <section class="capabilities-section">
+            <div class="container">
+                <h2>Capabilities</h2>
+
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <h3>Software</h3>
+                        <p>Python, SQL, Scikit-learn, PyTorch, OpenAI API, Pandas, NumPy, Django, Flask, Docker, GitHub Actions, PostgreSQL, Databricks, AWS, Azure</p>
                     </div>
 
-                    <div class="skill-category">
+                    <div class="capability-card">
                         <h3>Machine Learning</h3>
-                        <ul>
-                            <li>Regression & Classification</li>
-                            <li>Time Series Analysis</li>
-                            <li>Clustering</li>
-                            <li>Model Deployment</li>
-                            <li>LLMs & RAG</li>
-                            <li>LLM Agents</li>
-                        </ul>
+                        <p>Regression, Classification, Time Series Analysis, Clustering, Model Deployment, LLMs, RAG, LLM Agents</p>
                     </div>
 
-                    <div class="skill-category">
-                        <h3>Data Analysis</h3>
-                        <ul>
-                            <li>Business Intelligence</li>
-                            <li>Forecasting</li>
-                            <li>Data Wrangling</li>
-                            <li>Visualization (Matplotlib, Seaborn)</li>
-                        </ul>
+                    <div class="capability-card">
+                        <h3>Data & Analytics</h3>
+                        <p>Business Intelligence, Forecasting, Data Wrangling, ETL Pipelines, Hypothesis Testing, Experimental Design, A/B Testing</p>
                     </div>
 
-                    <div class="skill-category">
-                        <h3>Data Engineering</h3>
-                        <ul>
-                            <li>Parallel Processing</li>
-                            <li>ETL Pipelines</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Statistical Methods</h3>
-                        <ul>
-                            <li>Hypothesis Testing</li>
-                            <li>Experimental Design</li>
-                            <li>A/B Testing</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>AdTech Expertise</h3>
-                        <ul>
-                            <li>Google Ads Optimization</li>
-                            <li>Campaign Analysis</li>
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="contact-section">
-                    <h2>Get In Touch</h2>
-                    <div class="social-links">
-                        <a href="https://github.com/edmundarvin1" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/edmundarvin1/" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://www.kaggle.com/edmundarvin1" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-kaggle"></i>
-                        </a>
-                        <a href="mailto:edmundarvin1@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                    <div class="capability-card">
+                        <h3>Domain</h3>
+                        <p>AdTech, Google Ads Optimization, Campaign Analysis, Quantitative Trading</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="links-grid">
+                    <a href="https://github.com/edmundarvin1" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <h3>GitHub</h3>
+                    </a>
+                    <a href="https://www.linkedin.com/in/edmundarvin1/" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <h3>LinkedIn</h3>
+                    </a>
+                    <a href="https://www.kaggle.com/edmundarvin1" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <h3>Kaggle</h3>
+                    </a>
+                    <a href="mailto:edmundarvin1@gmail.com" class="link-card">
+                        <h3>Email</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="js/main.js"></script>
